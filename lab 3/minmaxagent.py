@@ -42,13 +42,13 @@ class MinMaxAgent:
             if resultOfMove == 1:   # if move is winning, maximize result
                 score, _ = self.minmax(game, 0, d-1)
                 if score > best_score:
-                    score = best_score
+                    best_score = score
                     best_move = moveToTest
             
             else:                   # we are loosing, minimize loss
                 score, _ = self.minmax(game, 1, d-1)
                 if score < best_score:
-                    score = best_score
+                    best_score = score
                     best_move = moveToTest
         
         return [best_score, best_move]
