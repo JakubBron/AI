@@ -30,5 +30,9 @@ class RandomForest:
     def bagging(self, X, y):
         X_selected, y_selected = None, None
         # TODO implement bagging
+        samples_number = X.shape[0]
+        chosen_idx = np.random.choice(samples_number, samples_number, replace=True)
+        X_selected = X[chosen_idx]
+        y_selected = y[chosen_idx]
 
         return X_selected, y_selected
